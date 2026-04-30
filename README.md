@@ -11,8 +11,8 @@ A Software Bill of Materials (SBOM) generator and vulnerability scanner.
 ## Quick Start
 To generate an SBOM for your project, run, in the project's folder:
 ```bash
-chmod +x update-sbom.sh
-./update-sbom.sh
+chmod +x SBOMaker.sh
+./SBOMaker.sh
 ```
 
 ## Documentation
