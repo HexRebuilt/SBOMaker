@@ -1,6 +1,6 @@
 # SBOMaker
 
-A professional Software Bill of Materials (SBOM) generator and vulnerability scanner.
+A Software Bill of Materials (SBOM) generator and vulnerability scanner.
 
 ## Key Features
 - **Automatic Component Discovery**: Automatically finds Web UI, Mobile, and Docker components.
@@ -9,7 +9,7 @@ A professional Software Bill of Materials (SBOM) generator and vulnerability sca
 - **Combined Project Reports**: Generates a unified SBOM and a comprehensive Markdown report.
 
 ## Quick Start
-To generate an SBOM for your project, run:
+To generate an SBOM for your project, run, in the project's folder:
 ```bash
 chmod +x update-sbom.sh
 ./update-sbom.sh
