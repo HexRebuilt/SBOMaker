@@ -26,7 +26,7 @@ SBOM_DIR="$PROJECT_ROOT/sbom"
 TIMESTAMP=$(date +%Y-%m-%d)
 TIMESTAMP_FULL=$(date +%Y-%m-%d-%H%M)
 CYCLONEDX_SCHEMA_VERSION="1.6"
-DOCKER_IMAGE="nomoney4u:latest"
+DOCKER_IMAGE=""
 
 # Component paths (discovered)
 WEBUI_PATH=""
@@ -435,7 +435,10 @@ generate_docker_sbom() {
                 log "Found image in docker-compose: $DOCKER_IMAGE"
             fi
         fi
-        if ! docker image inspect "$DOCKER_IMAGE" &> /dev/null; then
+        if [[ -z "$DOCKER_IMAGE" ]]; then
+            log_error "No Docker image specified and no docker-compose file found. Please use --docker-image <image_name>."
+            return 1
+        elif ! docker image inspect "$DOCKER_IMAGE" &> /dev/null; then
             log_error "Docker image not available. Please build the image first."
             return 1
         fi
@@ -809,7 +812,7 @@ Options:
     --docker        Generate SBOM for Docker Image only
     --all           Generate SBOM for all components (default)
     --no-fail        Do not exit with error if vulnerabilities/deps found
-    --docker-image  Specify Docker image name (default: nomoney4u:latest)
+    --docker-image  Specify Docker image name (must be specified via --docker-image)
     --help, -h      Show this help message
 
 Examples:
