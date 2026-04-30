@@ -1,7 +1,7 @@
 # SBOMaker Documentation
 
 ## Overview
-SBOMaker is a professional tool designed to generate a Software Bill of Materials (SBOM) and scan for vulnerabilities across multiple project components (Web UI, Mobile, Docker, and Generic apps).
+SBOMaker is a tool designed to generate a Software Bill of Materials (SBOM) and scan for vulnerabilities across multiple project components (Web UI, Mobile, Docker, and Generic apps).
 
 ## Installation
 ### Prerequisites
@@ -15,13 +15,13 @@ The script will attempt to install `syft` and `grype` automatically if they are 
 1. Clone the repository.
 2. Make the script executable:
    ```bash
-   chmod +x update-sbom.sh
+   chmod +x SBOMmaker.sh
    ```
 
 ## Usage
 Run the script from the project root:
 ```bash
-./update-sbom.sh [OPTIONS]
+./SBOMmaker.sh [OPTIONS]
 ```
 
 ### Options
